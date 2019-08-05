@@ -4,11 +4,13 @@
 Console.logs from the inside of the iframe in the webview are not printed. Also it isn't possible to debug source file from the iframe.
 
 ## Step to reproduce
-1. Start the server containing page we want to show in the iframe located in webview: `npm run start:server`
-2. Press `F5` to compile and run the extension
-3. Run the Hello World command from the Command Palette (Ctrl+Shift+P) in the new window
-4. Open Webview Developer Tools console
-5. Notice that instead of 2 console logs (from the webview and the iframe) two errors are printed, each of which saying: `VM93 main.js:10 [Violation] Avoid using document.write().`
+1. Clone the repo with the example: https://github.com/hsiwkin/vsc-bug-example
+2. Start the server containing page we want to show in the iframe located in webview: `npm run start:server`
+3. Press `F5` to compile and run the extension
+4. Run the Hello World command from the Command Palette (Ctrl+Shift+P) in the new window
+5. Open Webview Developer Tools console
+6. Reload Webviews
+7. Notice that instead of 2 console logs (from the webview and the iframe) two errors are printed, each of which saying: `VM93 main.js:10 [Violation] Avoid using document.write().`
 
 ## Expected behaviour
 * Two console logs: `Hello from the iframe` and `Hello from the webview` are printed.
